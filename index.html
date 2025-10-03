@@ -1,86 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<!-- Google tag (gtag.js) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gerardo Parrello</title>
+	<meta name="description" content="Data Platform Engineer based in Barcelona, Spain.">
+	<meta name="keywords" content="Data Engineer, DevOps, Kubernetes, Trino, Airflow, Barcelona">
+	<meta name="author" content="Gerardo Parrello">
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="images/ico/favicon.jpg">
+	
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;500;600;700&family=SF+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/brittany-style.css">
+	
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GN2B2RN0E"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-3GN2B2RN0E');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-3GN2B2RN0E');
 	</script>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="gparrello.com, gparrellobrasca@gmail.com">
-	<meta name="copyright" content="gparrello.com">
-	<title>Gerardo Parrello</title>
-
-	<!-- favicon -->
-    <link rel="shortcut icon" href="images/ico/favicon.jpg">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/template.css" />
-
 </head>
-
 <body>
-
-	<!-- Wrapper
-    ================================================== -->
-	<div id="nino-cvWrap">
-		<nav id="mainMenu">
-			<ul>
-				<li><a href="#about" class="topBar"><i class="mdi mdi-account nino-icon"></i>About</a></li>
-				<li><a href="#experience" class="topBar"><i class="mdi mdi-briefcase nino-icon"></i>Experience</a></li>
-				<li><a href="#education" class="topBar"><i class="mdi mdi-school nino-icon"></i>Education</a></li>
-				<li><a href="#skills" class="topBar"><i class="mdi mdi-code-tags nino-icon"></i>Skills</a></li>
-				<li><a href="https://github.com/gparrello/curriculum_vitae" class="topBar"><i class="mdi mdi-directions-fork nino-icon"></i>Fork this!</a></li>
-			</ul>
-		</nav>
-		
-		<main id="nino-mainContent">
-			<!-- Hero Section -->
-			<section id="hero" class="hero-section">
-				<div class="hero-content">
-					<div class="hero-text">
-						<h1 class="hero-greeting">Hi, my name is</h1>
-						<h2 class="hero-name">Gerardo Parrello.</h2>
-						<h3 class="hero-title">I build data platforms.</h3>
-						<p class="hero-description">
-							I'm a DevOps engineer focused on Data Platform infrastructure. 
-							Economics major and musician, passionate about data and technology. 
-							As an avid self-hoster, interested in open source software, privacy and decentralization.
-						</p>
-						<div class="hero-contact">
-							<a href="mailto:gparrellobrasca@gmail.com" class="contact-button">Get In Touch</a>
-						</div>
-					</div>
-					<div class="hero-image">
-						<img src="images/avatar.jpg" alt="Gerardo Parrello" class="avatar">
+	<!-- Skip to content -->
+	<a class="skip-to-content" href="#content">Skip to Content</a>
+	
+	<!-- Header -->
+	<header class="header">
+		<nav class="nav">
+			<div class="nav__content">
+				<div class="nav__logo">
+					<a href="/">GP</a>
+				</div>
+				
+				<div class="nav__links">
+					<ol>
+						<li><a href="#about">About</a></li>
+						<li><a href="#jobs">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ol>
+					
+					<div class="nav__resume">
+						<a class="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 					</div>
 				</div>
-			</section>
-
-			<!-- About Section -->
-			<section id="about" class="content-section">
-				<h2 class="section-heading">
-					<span class="section-number">01.</span>
-					<span class="section-title">About Me</span>
-					<div class="section-line"></div>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- Main Content -->
+	<main id="content">
+		<!-- Hero Section -->
+		<section id="hero" class="hero">
+			<div class="hero__content">
+				<p class="hero__greeting">Hi, my name is</p>
+				<h1 class="hero__name">Gerardo Parrello.</h1>
+				<h2 class="hero__title">I build data platforms.</h2>
+				<p class="hero__description">
+					I'm a DevOps engineer focused on Data Platform infrastructure. 
+					Currently, I'm building scalable data platforms at 
+					<a href="https://glovoapp.com" target="_blank" rel="noopener noreferrer">Glovo</a> 
+					that serve millions of users across multiple countries.
+				</p>
+				<div class="hero__cta">
+					<a class="cta-button" href="#contact">Get In Touch</a>
+				</div>
+			</div>
+		</section>
+		
+		<!-- About Section -->
+		<section id="about" class="about">
+			<div class="about__content">
+				<h2 class="section__title">
+					<span class="section__number">01.</span>
+					About Me
 				</h2>
-				<div class="section-content">
-					<div class="about-content">
-						<div class="about-text">
+				<div class="about__inner">
+					<div class="about__text">
+						<div>
 							<p>
 								Hello! My name is Gerardo and I enjoy creating things that live on the internet. 
 								My interest in data engineering started back in 2017 when I decided to try building 
@@ -88,330 +93,309 @@
 							</p>
 							<p>
 								Fast-forward to today, and I've had the privilege of working at companies like 
-								<a href="https://glovoapp.com">Glovo</a> and <a href="https://letgo.com">Letgo</a>, 
+								<a href="https://glovoapp.com" target="_blank" rel="noopener noreferrer">Glovo</a> and 
+								<a href="https://letgo.com" target="_blank" rel="noopener noreferrer">Letgo</a>, 
 								where I've been building and maintaining data platforms that serve millions of users.
 							</p>
 							<p>Here are a few technologies I've been working with recently:</p>
-							<ul class="tech-list">
-								<li>Kubernetes</li>
-								<li>Trino</li>
-								<li>Apache Airflow</li>
-								<li>Terraform</li>
-								<li>Python</li>
-								<li>Docker</li>
-							</ul>
+						</div>
+						<ul class="skills__list">
+							<li>Kubernetes</li>
+							<li>Trino</li>
+							<li>Apache Airflow</li>
+							<li>Terraform</li>
+							<li>Python</li>
+							<li>Docker</li>
+						</ul>
+					</div>
+					<div class="about__image">
+						<div class="about__image__wrapper">
+							<img src="images/avatar.jpg" alt="Gerardo Parrello" class="about__image__img">
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<!-- Experience Section -->
-			<section id="experience" class="content-section">
-				<h2 class="section-heading">
-					<span class="section-number">02.</span>
-					<span class="section-title">Where I've Worked</span>
-					<div class="section-line"></div>
+			</div>
+		</section>
+		
+		<!-- Experience Section -->
+		<section id="jobs" class="jobs">
+			<div class="jobs__content">
+				<h2 class="section__title">
+					<span class="section__number">02.</span>
+					Where I've Worked
 				</h2>
-				<div class="section-content">
-					<div class="experience-content">
-						<div class="experience-tabs">
-							<button class="tab-button active" data-tab="glovo">Glovo</button>
-							<button class="tab-button" data-tab="letgo">Letgo</button>
-							<button class="tab-button" data-tab="payxpert">PayXpert</button>
-							<button class="tab-button" data-tab="freelance">Freelance</button>
-							<button class="tab-button" data-tab="kott">Kott Müller</button>
-							<button class="tab-button" data-tab="northweek">Northweek</button>
-							<button class="tab-button" data-tab="kpmg">KPMG</button>
-						</div>
-						
-						<div class="experience-panels">
-							<div class="tab-panel active" id="glovo">
-								<h3 class="job-title">Data Engineer & Data Platform Engineer <span class="company">@ <a href="https://glovoapp.com">Glovo</a></span></h3>
-								<p class="job-period">October 2020 - Present</p>
-								<div class="job-description">
-									<p>
-										Glovo is the app that allows you to get the best products of your city in a few minutes.
-										We connect users, businesses and couriers to make that possible.
-										The project was born with the aim of transforming the way users acquire what they need, making cities more accessible.
-									</p>
-									<p>
-										Originally joining the central Data Engineering team to manage all data pipelines for the company
-										using Luigi and Jenkins as orchestration stack, and Redshift as our data warehouse. The technical decisions taken
-										at the time were not the best fit for a company that was growing as fast as Glovo did, and soon enough
-										the team started evaluating new technologies to replace them.
-									</p>
-									<p>
-										With the introduction of a data mesh architecture, the team moved on to build the platform that allowed
-										all newly created data domains to build and manage their own data products, using Airflow for orchestration and Trino and Glue as data lake,
-										thus becoming the Data Platform team.
-									</p>
-									<p>
-										My main objective within this team was to design, implement and oversee
-										all Trino infrastructure. This infra continues running until today, with several clusters serving hundreds of thousands of queries per day.
-									</p>
-								</div>
-								<ul class="job-tech">
-									<li>Kubernetes</li>
-									<li>Trino</li>
-									<li>Apache Airflow</li>
-									<li>Terraform</li>
-									<li>ArgoCD</li>
-									<li>AWS Glue</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="letgo">
-								<h3 class="job-title">BI Data Engineer <span class="company">@ <a href="https://letgo.com/about-letgo">Letgo</a></span></h3>
-								<p class="job-period">May 2019 - August 2020</p>
-								<div class="job-description">
-									<p>
-										Letgo provides a marketplace that allows users to buy from, sell to and chat with others locally.
-										The products launched in 2015. By September 2015, its app had two million downloads and half a million product listings.
-										In 2017 it was the second fastest growing app in the U.S.
-									</p>
-									<p>
-										My main objective consisted on providing stakeholders inside and outside the company with relevant data in a timely manner,
-										managing over a hundred pipelines in Airflow that deliver all the data necessary —pulling from tens of databases and external sources,
-										and hundreds of domain events— to our internal customers —data analysts, data scientists, trust and safety and customer care agents,
-										finance and high management—.
-									</p>
-								</div>
-								<ul class="job-tech">
-									<li>Apache Airflow</li>
-									<li>Python</li>
-									<li>PostgreSQL</li>
-									<li>Redshift</li>
-									<li>Docker</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="payxpert">
-								<h3 class="job-title">Data Engineer <span class="company">@ <a href="https://payxpert.com">PayXpert</a></span></h3>
-								<p class="job-period">November 2017 - November 2018</p>
-								<div class="job-description">
-									<p>
-										PayXpert is a fintech company currently expanding its team in Barcelona, with offices in several countries.
-										It provides its customers with electronic payment solutions.
-									</p>
-									<p>Worked-on projects include:</p>
-									<ul>
-										<li>Design of custom ETL pipeline to perform automated bank reconciliations.</li>
-										<li>Implementation of a company wide open source Human Resources Management solution.</li>
-										<li>Implementation of automatic data retrieval from FTP remote sources using VPN and SSH keys.</li>
-									</ul>
-								</div>
-								<ul class="job-tech">
-									<li>Python</li>
-									<li>ETL</li>
-									<li>MySQL</li>
-									<li>SSH</li>
-									<li>VPN</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="freelance">
-								<h3 class="job-title">Finance Manager & Data Engineer <span class="company">@ Freelance</span></h3>
-								<p class="job-period">November 2016 - October 2018</p>
-								<div class="job-description">
-									<p>During my time as a freelancer for various clients, I worked on the following projects:</p>
-									<ul>
-										<li>Developed an ETL pipeline from <a href="http://zendesk.com">Zendesk</a> to a MySQL instance in AWS RDS</li>
-										<li>Deployed <a href="https://grafana.com">Grafana</a> to an AWS EC2 instance to plot data in real-time dashboards</li>
-										<li>Implemented <a href="#">Odoo 8</a> (formerly OpenERP)</li>
-									</ul>
-								</div>
-								<ul class="job-tech">
-									<li>Python</li>
-									<li>AWS RDS</li>
-									<li>AWS EC2</li>
-									<li>Grafana</li>
-									<li>MySQL</li>
-									<li>Odoo</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="kott">
-								<h3 class="job-title">Founder <span class="company">@ Kott Müller</span></h3>
-								<p class="job-period">November 2015 - October 2016</p>
-								<div class="job-description">
-									<p>
-										My partners and I created a shoes brand that produced locally.
-										We managed everything: from building the site from the ground up to logistics, finance and marketing.
-									</p>
-									<p>
-										While the company didn't reach the goals we initially planned, here's what I learned:
-									</p>
-									<ul>
-										<li>You need to surround yourself with people that have not only complementary skillsets but also personalities.</li>
-										<li>You can't engage into building complex structures in an early stage startup.</li>
-										<li>Obstacles that you don't account for are going to come up all the time. You need a lot of grit to deal with them.</li>
-									</ul>
-								</div>
-								<ul class="job-tech">
-									<li>Entrepreneurship</li>
-									<li>Business Strategy</li>
-									<li>Finance Management</li>
-									<li>Marketing</li>
-									<li>Logistics</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="northweek">
-								<h3 class="job-title">Finance Manager <span class="company">@ <a href="https://northweek.com">Northweek</a></span></h3>
-								<p class="job-period">October 2014 - October 2015</p>
-								<div class="job-description">
-									<p>
-										Northweek is a start-up that was recently acquired by a major glasses brand.
-										I was in charge of building the accounting team, as well as
-										implementing infrastructure to start delivering accounting statements and reports.
-									</p>
-								</div>
-								<ul class="job-tech">
-									<li>Finance Management</li>
-									<li>Accounting</li>
-									<li>Team Building</li>
-									<li>Financial Reporting</li>
-								</ul>
-							</div>
-							
-							<div class="tab-panel" id="kpmg">
-								<h3 class="job-title">Accounting Audit Intern <span class="company">@ KPMG</span></h3>
-								<p class="job-period">January 2013 - December 2013</p>
-								<div class="job-description">
-									<p>
-										Engaged in field work focused on audit reports for the following clients, among others:
-										<a href="http://www.artificial-solutions.com/">Artificial Solutions</a>,
-										<a href="http://www.dsv.com/">DSV: Global Transport and Logistics</a>,
-										<a href="http://www.omnicommediagroup.com/">Omnicom Media Group</a>,
-										<a href="http://www.ricoh.es/">Ricoh</a>,
-										<a href="http://www.tourlineexpress.com/">Tourline Express</a>,
-										<a href="http://www.tram.cat/">TRAM</a>,
-										<a href="http://www.2wglobal.com/">Wallenius Wilhelmsen Logistics</a>.
-									</p>
-								</div>
-								<ul class="job-tech">
-									<li>Auditing</li>
-									<li>Financial Analysis</li>
-									<li>Risk Assessment</li>
-									<li>Compliance</li>
-								</ul>
-							</div>
-						</div>
+				<div class="jobs__inner">
+					<div class="jobs__tabs">
+						<button class="jobs__tab active" data-tab="glovo">Glovo</button>
+						<button class="jobs__tab" data-tab="letgo">Letgo</button>
+						<button class="jobs__tab" data-tab="payxpert">PayXpert</button>
+						<button class="jobs__tab" data-tab="freelance">Freelance</button>
+						<button class="jobs__tab" data-tab="kott">Kott Müller</button>
+						<button class="jobs__tab" data-tab="northweek">Northweek</button>
+						<button class="jobs__tab" data-tab="kpmg">KPMG</button>
 					</div>
-				</div>
-			</section>
-
-			<!-- Education Section -->
-			<section id="education" class="content-section">
-				<h2 class="section-heading">
-					<span class="section-number">03.</span>
-					<span class="section-title">Education</span>
-					<div class="section-line"></div>
-				</h2>
-				<div class="section-content">
-					<div class="education-content">
-						<div class="education-item">
-							<h3 class="education-title">Data Analytics with Machine Learning</h3>
-							<p class="education-institution">Ubiqum Code Academy</p>
-							<p class="education-period">November 2018 - April 2019</p>
-							<div class="education-description">
-								<p>Ubiqum is a respected coding academy. It specializes in Java Full-Stack and Data Analytics.
-								The Data Analytics <a href="https://ubiqum.com/programs/data-analytics-and-machine-learning-program/">course</a> lasts five months
-								and was designed by the programme heads from Carnegie Mellon and learning scientists from Northwestern University.</p>
-								<p>Some of the projects I worked on were:</p>
+					<div class="jobs__panels">
+						<div class="jobs__panel active" id="glovo">
+							<h3 class="jobs__panel__title">
+								Data Engineer & Data Platform Engineer 
+								<span class="jobs__panel__company">@ <a href="https://glovoapp.com" target="_blank" rel="noopener noreferrer">Glovo</a></span>
+							</h3>
+							<p class="jobs__panel__range">October 2020 - Present</p>
+							<div class="jobs__panel__description">
 								<ul>
-									<li>Investigating customer buying patterns and predicting profitability</li>
-									<li>Market basket analysis: discovering association between products</li>
-									<li>IoT analytics on energy consumption</li>
-									<li>Predicting indoor location through <a href="https://dblp.org/rec/conf/ipin/RojoCULSBTMCLPS19">WiFi</a> signals</li>
-									<li>An <a href="https://github.com/gparrello/grafana_api">API + Dashboard</a> to receive and plot results of a datathon</li>
+									<li>Design, implement and oversee all Trino infrastructure serving hundreds of thousands of queries per day</li>
+									<li>Lead the transition from legacy Luigi/Jenkins stack to modern Airflow/Trino/Glue data lake architecture</li>
+									<li>Build data mesh platform allowing data domains to manage their own data products</li>
+									<li>Implement Kubernetes, ArgoCD and Terraform for infrastructure as code</li>
+									<li>Create support team structure to reduce stakeholder support overhead</li>
 								</ul>
 							</div>
 						</div>
 						
-						<div class="education-item">
-							<h3 class="education-title">Bachelor in Economics</h3>
-							<p class="education-institution">University of Barcelona</p>
-							<p class="education-period">September 2008 - June 2012</p>
-							<div class="education-description">
-								<p>Bachelor's degree in Economics providing a strong foundation in economic theory, mathematics, and analytical thinking.</p>
+						<div class="jobs__panel" id="letgo">
+							<h3 class="jobs__panel__title">
+								BI Data Engineer 
+								<span class="jobs__panel__company">@ <a href="https://letgo.com" target="_blank" rel="noopener noreferrer">Letgo</a></span>
+							</h3>
+							<p class="jobs__panel__range">May 2019 - August 2020</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Managed over 100 pipelines in Airflow delivering data to internal customers</li>
+									<li>Provided stakeholders with relevant data in a timely manner</li>
+									<li>Pulled data from tens of databases and external sources</li>
+									<li>Served data analysts, data scientists, trust and safety, customer care, finance and management</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="jobs__panel" id="payxpert">
+							<h3 class="jobs__panel__title">
+								Data Engineer 
+								<span class="jobs__panel__company">@ <a href="https://payxpert.com" target="_blank" rel="noopener noreferrer">PayXpert</a></span>
+							</h3>
+							<p class="jobs__panel__range">November 2017 - November 2018</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Designed custom ETL pipeline for automated bank reconciliations</li>
+									<li>Implemented company-wide open source Human Resources Management solution</li>
+									<li>Built automatic data retrieval from FTP remote sources using VPN and SSH keys</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="jobs__panel" id="freelance">
+							<h3 class="jobs__panel__title">
+								Finance Manager & Data Engineer 
+								<span class="jobs__panel__company">@ Freelance</span>
+							</h3>
+							<p class="jobs__panel__range">November 2016 - October 2018</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Developed ETL pipeline from Zendesk to MySQL instance in AWS RDS</li>
+									<li>Deployed Grafana to AWS EC2 instance for real-time data dashboards</li>
+									<li>Implemented Odoo 8 (formerly OpenERP) for various clients</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="jobs__panel" id="kott">
+							<h3 class="jobs__panel__title">
+								Founder 
+								<span class="jobs__panel__company">@ Kott Müller</span>
+							</h3>
+							<p class="jobs__panel__range">November 2015 - October 2016</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Created a locally-produced shoes brand with partners</li>
+									<li>Managed everything from building the site to logistics, finance and marketing</li>
+									<li>Learned valuable lessons about entrepreneurship and team building</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="jobs__panel" id="northweek">
+							<h3 class="jobs__panel__title">
+								Finance Manager 
+								<span class="jobs__panel__company">@ <a href="https://northweek.com" target="_blank" rel="noopener noreferrer">Northweek</a></span>
+							</h3>
+							<p class="jobs__panel__range">October 2014 - October 2015</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Built the accounting team for the startup</li>
+									<li>Implemented infrastructure for accounting statements and reports</li>
+									<li>Company was later acquired by a major glasses brand</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="jobs__panel" id="kpmg">
+							<h3 class="jobs__panel__title">
+								Accounting Audit Intern 
+								<span class="jobs__panel__company">@ KPMG</span>
+							</h3>
+							<p class="jobs__panel__range">January 2013 - December 2013</p>
+							<div class="jobs__panel__description">
+								<ul>
+									<li>Engaged in field work focused on audit reports</li>
+									<li>Worked with clients including Artificial Solutions, DSV, Omnicom Media Group, Ricoh, Tourline Express, TRAM, and Wallenius Wilhelmsen Logistics</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<!-- Skills Section -->
-			<section id="skills" class="content-section">
-				<h2 class="section-heading">
-					<span class="section-number">04.</span>
-					<span class="section-title">Skills & Languages</span>
-					<div class="section-line"></div>
+			</div>
+		</section>
+		
+		<!-- Projects Section -->
+		<section id="projects" class="projects">
+			<div class="projects__content">
+				<h2 class="section__title">
+					<span class="section__number">03.</span>
+					Some Things I've Built
 				</h2>
-				<div class="section-content">
-					<div class="skills-content">
-						<div class="skills-category">
-							<h3 class="category-title">Languages</h3>
-							<div class="language-item">
-								<span class="language-name">English</span>
-								<div class="language-bar">
-									<div class="language-progress" style="width: 100%"></div>
+				<div class="projects__inner">
+					<div class="projects__featured">
+						<div class="project">
+							<div class="project__image">
+								<a href="https://github.com/gparrello/grafana_api" target="_blank" rel="noopener noreferrer">
+									<img src="images/projects/grafana-api.jpg" alt="Grafana API Dashboard">
+								</a>
+							</div>
+							<div class="project__content">
+								<div class="project__overlay">
+									<h3 class="project__title">Grafana API Dashboard</h3>
+									<div class="project__description">
+										<p>
+											An API and Dashboard built to receive and plot results of a datathon. 
+											Built with Python Flask and Grafana for real-time data visualization.
+										</p>
+									</div>
+									<ul class="project__tech">
+										<li>Python</li>
+										<li>Flask</li>
+										<li>Grafana</li>
+										<li>PostgreSQL</li>
+									</ul>
+									<div class="project__links">
+										<a href="https://github.com/gparrello/grafana_api" target="_blank" rel="noopener noreferrer">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+											</svg>
+										</a>
+									</div>
 								</div>
 							</div>
-							<div class="language-item">
-								<span class="language-name">Spanish</span>
-								<div class="language-bar">
-									<div class="language-progress" style="width: 100%"></div>
-								</div>
-							</div>
-							<div class="language-item">
-								<span class="language-name">Catalan</span>
-								<div class="language-bar">
-									<div class="language-progress" style="width: 90%"></div>
+						</div>
+					</div>
+					
+					<div class="projects__other">
+						<div class="project">
+							<div class="project__content">
+								<div class="project__overlay">
+									<h3 class="project__title">Trino Infrastructure Platform</h3>
+									<div class="project__description">
+										<p>
+											Designed and implemented scalable Trino infrastructure serving hundreds of thousands of queries per day. 
+											Built with Kubernetes, Terraform, and ArgoCD for infrastructure as code.
+										</p>
+									</div>
+									<ul class="project__tech">
+										<li>Kubernetes</li>
+										<li>Trino</li>
+										<li>Terraform</li>
+										<li>ArgoCD</li>
+									</ul>
+									<div class="project__links">
+										<a href="https://github.com/gparrello" target="_blank" rel="noopener noreferrer">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+											</svg>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
 						
-						<div class="skills-category">
-							<h3 class="category-title">Technologies</h3>
-							<div class="tech-grid">
-								<div class="tech-item">Kubernetes</div>
-								<div class="tech-item">Trino</div>
-								<div class="tech-item">Apache Airflow</div>
-								<div class="tech-item">Terraform</div>
-								<div class="tech-item">Python</div>
-								<div class="tech-item">Docker</div>
-								<div class="tech-item">AWS</div>
-								<div class="tech-item">PostgreSQL</div>
-								<div class="tech-item">Redshift</div>
-								<div class="tech-item">ArgoCD</div>
-								<div class="tech-item">Grafana</div>
-								<div class="tech-item">MySQL</div>
+						<div class="project">
+							<div class="project__content">
+								<div class="project__overlay">
+									<h3 class="project__title">Data Mesh Architecture</h3>
+									<div class="project__description">
+										<p>
+											Led the transition to data mesh architecture allowing data domains to build and manage their own data products. 
+											Implemented with Airflow, Trino, and AWS Glue.
+										</p>
+									</div>
+									<ul class="project__tech">
+										<li>Apache Airflow</li>
+										<li>AWS Glue</li>
+										<li>Data Mesh</li>
+										<li>Python</li>
+									</ul>
+									<div class="project__links">
+										<a href="https://github.com/gparrello" target="_blank" rel="noopener noreferrer">
+											<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+											</svg>
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-		</main>
-	</div>
-
-    <!-- Scroll to top
-    ================================================== -->
-	<a href="#" id="nino-scrollToTop">Go to Top</a>
-
-	<!-- javascript -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/template.js"></script>
-
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!-- css3-mediaqueries.js for IE less than 9 -->
-	<!--[if lt IE 9]>
-	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
-
+			</div>
+		</section>
+		
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<div class="contact__content">
+				<h2 class="section__title">
+					<span class="section__number">04.</span>
+					What's Next?
+				</h2>
+				<h2 class="contact__title">Get In Touch</h2>
+				<p class="contact__description">
+					Although I'm not currently looking for any new opportunities, my inbox is always open. 
+					Whether you have a question or just want to say hi, I'll try my best to get back to you!
+				</p>
+				<div class="contact__cta">
+					<a class="cta-button" href="mailto:gparrellobrasca@gmail.com">Say Hello</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer__content">
+			<div class="footer__links">
+				<a href="https://github.com/gparrello" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+					<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+					</svg>
+				</a>
+				<a href="https://linkedin.com/in/gparrello" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+						<rect x="2" y="9" width="4" height="12"></rect>
+						<circle cx="4" cy="4" r="2"></circle>
+					</svg>
+				</a>
+				<a href="mailto:gparrellobrasca@gmail.com" aria-label="Email">
+					<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+						<polyline points="22,6 12,13 2,6"></polyline>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__bottom">
+				<p>Designed & Built by Gerardo Parrello</p>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- Scripts -->
+	<script src="js/brittany-script.js"></script>
 </body>
 </html>
