@@ -4,18 +4,20 @@
 * @license   Ninodezign.com Proprietary License
 */
 /* ============================== DEFAULT HTML ============================== */
-@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700';
-@import 'https://fonts.googleapis.com/css?family=Mr+De+Haviland';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap';
 html, body {
 	margin: 0;
 	padding: 0;
 }
 body {
-	color: #263238;
-	font-size: 13px;
-	font-weight: 300;
+	color: #1a1a1a;
+	font-size: 14px;
+	font-weight: 400;
 	position: relative;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	line-height: 1.6;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	min-height: 100vh;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main {
     display: block;
@@ -32,16 +34,17 @@ hr {
 a {
 	text-decoration: none;
 	outline: none;
-	color: #90a4ae;
-	-webkit-transition: all .3s ease-in-out;
-	   -moz-transition: all .3s ease-in-out;
-		 -o-transition: all .3s ease-in-out;
-		-ms-transition: all .3s ease-in-out;
-			transition: all .3s ease-in-out;
+	color: #4f46e5;
+	-webkit-transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+	   -moz-transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+		 -o-transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+		-ms-transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+			transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 a:hover {
-	color: #666;
+	color: #7c3aed;
 	text-decoration: none;
+	transform: translateY(-1px);
 }
 a:active {
 	text-decoration: none;
@@ -57,14 +60,16 @@ a[class*="glyphicon-"] {
 }
 
 .topBar {
-	color: #263238;
+	color: #1a1a1a;
+	font-weight: 500;
 }
 /* =============== DEFAULT HTML - HEADING STYLES =============== */
 h1, h2, h3, h4, h5, h6 {
-	margin: 5px 0 10px;
-	text-transform: uppercase;
-	font-weight: 400;
-	line-height: 1.4;
+	margin: 8px 0 12px;
+	text-transform: none;
+	font-weight: 600;
+	line-height: 1.3;
+	color: #1a1a1a;
 }
 /* =============== DEFAULT HTML - LIST STYLES =============== */
 ul, ul li,
@@ -127,83 +132,152 @@ img.img-full-width {
 }
 /* =============== NAVIGATION =============== */
 #mainMenu {
-	margin: 15px 0;
+	margin: 20px 0;
+	padding: 0 20px;
 }
 #mainMenu ul {
 	text-align: right;
+	margin: 0;
+	padding: 0;
 }
 #mainMenu ul li {
 	display: inline-block;
+	margin-left: 8px;
 }
 #mainMenu ul li a {
 	display: block;
-	padding: 10px;
+	padding: 12px 20px;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 600;
+	font-size: 13px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 25px;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease;
+}
+#mainMenu ul li a:hover {
+	background: rgba(79, 70, 229, 0.2);
+	border-color: rgba(79, 70, 229, 0.3);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }
 #mainMenu ul li .nino-icon {
-	font-size: 18px;
+	font-size: 16px;
 	position: relative;
 	top: 2px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 /* =============== LAYOUT - HEADER AREA =============== */
 header {
 	text-align: center;
-	padding: 35px 20px;
-	margin-bottom: 35px;
-	background: #263238;
+	padding: 40px 20px;
+	margin-bottom: 40px;
+	background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+	position: relative;
+	overflow: hidden;
+}
+header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+	pointer-events: none;
 }
 header .avatar {
-	width: 150px;
+	width: 160px;
 	border-radius: 50%;
-	background: #37474f;
-	padding: 4px;
-	margin-bottom: 10px;
+	background: linear-gradient(135deg, #4f46e5, #7c3aed);
+	padding: 6px;
+	margin-bottom: 16px;
+	box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+	position: relative;
+	z-index: 1;
 }
 header .name {
-	font-size: 20px;
+	font-size: 24px;
 	margin-bottom: 8px;
+	font-weight: 700;
+	color: #f8fafc;
+	position: relative;
+	z-index: 1;
 }
 header .regency {
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: capitalize;
+	color: #cbd5e1;
+	font-weight: 500;
+	position: relative;
+	z-index: 1;
 }
 /* =============== LAYOUT - CONTENT AREA =============== */
 #nino-cvWrap {
-	max-width: 960px;
-	margin: 0 auto;
+	max-width: 1000px;
+	margin: 20px auto;
 	background: #fff;
+	border-radius: 16px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
 }
 #nino-leftSide {
-	width: 310px;
-	background: #37474f;
-	color: #fdfdfe;
+	width: 320px;
+	background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+	color: #f8fafc;
+	position: relative;
+}
+#nino-leftSide::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+	pointer-events: none;
 }
 #nino-rightSide {
-	border: 1px solid #d2d2d2;
-	width: calc(100% - 310px);
+	border: none;
+	width: calc(100% - 320px);
+	background: #ffffff;
 }
 main {
-	padding: 30px 40px;
+	padding: 40px 50px;
 }
 section {
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
 section:last-child {
 	margin-bottom: 0;
 }
 section .nino-sectionHeading {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 700;
+	color: #1a1a1a;
+	position: relative;
+	padding-bottom: 12px;
+	margin-bottom: 24px;
+}
+section .nino-sectionHeading::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+	height: 3px;
+	background: linear-gradient(90deg, #4f46e5, #7c3aed);
+	border-radius: 2px;
 }
 section .nino-sectionHeading .nino-icon {
-	background: #263238;
-	padding: 8px;
-	border-radius: 50%;
-	margin-right: 10px;
+	background: linear-gradient(135deg, #4f46e5, #7c3aed);
+	padding: 10px;
+	border-radius: 12px;
+	margin-right: 12px;
 	font-size: 20px;
 	color: #fff;
+	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 section .nino-sectionContent > .inner {
 	margin-left: 55px;
@@ -215,7 +289,17 @@ section .nino-sectionContent > .inner {
 	font-size: 26px;
 }
 article {
-	margin: 30px 0;
+	margin: 40px 0;
+	padding: 24px;
+	background: #f8fafc;
+	border-radius: 12px;
+	border-left: 4px solid #4f46e5;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+article:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 article:last-child {
 	margin-bottom: 0;
@@ -225,49 +309,72 @@ article .nino-articleThumb {
 	text-align: center;
 }
 article .nino-articleTitle {
-	font-size: 20px;
-	margin: 0 0 5px;
+	font-size: 22px;
+	margin: 0 0 8px;
+	font-weight: 700;
+	color: #1a1a1a;
 }
 article .nino-articleMeta {
-	color: #90a4ae;
-	margin-bottom: 10px;
-	font-weight: 400;
+	color: #64748b;
+	margin-bottom: 16px;
+	font-weight: 500;
+	font-size: 14px;
 }
 article .nino-articleMeta span {
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 16px;
+	background: #e2e8f0;
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 13px;
 }
 article .nino-articleMeta .nino-icon {
-	font-size: 17px;
-	margin-right: 5px;
+	font-size: 16px;
+	margin-right: 6px;
 	position: relative;
-	top: 2px;
+	top: 1px;
+	color: #4f46e5;
 }
 /* =============== LEFT SIDE =============== */
 #nino-leftSide a {
-	color: #8dd900;
+	color: #60a5fa;
+	font-weight: 500;
+}
+#nino-leftSide a:hover {
+	color: #93c5fd;
+	transform: translateX(4px);
 }
 #nino-leftSide .nino-listWithIcon > li {
-	margin-bottom: 10px;
+	margin-bottom: 16px;
+	position: relative;
+	z-index: 1;
 }
 #nino-leftSide .nino-listWithIcon .nino-icon {
-	background: #fff;
-	color: #263238;
-	padding: 5px;
-	border-radius: 50%;
-	margin: 0 15px 0 4px;
-	font-size: 14px;
+	background: linear-gradient(135deg, #4f46e5, #7c3aed);
+	color: #fff;
+	padding: 8px;
+	border-radius: 10px;
+	margin: 0 16px 0 0;
+	font-size: 16px;
+	box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 #nino-leftSide section {
-	margin-bottom: 35px;
-	padding: 0 30px;
+	margin-bottom: 40px;
+	padding: 0 35px;
+	position: relative;
+	z-index: 1;
 }
 #nino-leftSide .nino-mySkill .progress {
-	margin: 0;
-	height: 8px;
+	margin: 8px 0 0 0;
+	height: 10px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
 }
 #nino-leftSide .nino-mySkill .progress-bar {
-	background-color: #263238;
+	background: linear-gradient(90deg, #4f46e5, #7c3aed);
+	border-radius: 8px;
+	transition: width 0.8s ease-in-out;
 }
 /* =============== MAIN PAGE =============== */
 #nino-mainContent .nino-languages {
