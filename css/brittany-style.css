@@ -635,14 +635,14 @@ section {
 .projects__featured {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr;
   align-items: center;
   margin-bottom: 100px;
 }
 
 .project {
   position: relative;
-  grid-column: 1 / 7;
+  grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
 
@@ -686,9 +686,9 @@ section {
 .project__content {
   position: relative;
   z-index: 2;
-  grid-column: 6 / -1;
+  grid-column: 1 / -1;
   grid-row: 1 / -1;
-  text-align: right;
+  text-align: left;
 }
 
 .project__overlay {
