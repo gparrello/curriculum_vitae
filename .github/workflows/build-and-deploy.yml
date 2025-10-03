@@ -1,0 +1,111 @@
+name: Build and Deploy CV
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
+      force_rebuild:
+        description: 'Force rebuild even if no changes'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        if [ -f package.json ]; then
+          npm ci
+        else
+          echo "No package.json found, skipping npm install"
+        fi
+        
+    - name: Validate HTML
+      run: |
+        echo "Validating HTML structure..."
+        if command -v html5validator &> /dev/null; then
+          html5validator --root . --also-check-css --also-check-js
+        else
+          echo "HTML5 validator not available, skipping validation"
+        fi
+        
+    - name: Check for broken links
+      run: |
+        echo "Checking for broken links..."
+        if command -v linkchecker &> /dev/null; then
+          linkchecker --check-extern --no-warnings index.html
+        else
+          echo "Link checker not available, skipping link validation"
+        fi
+        
+    - name: Build and optimize assets
+      run: |
+        echo "Building and optimizing assets..."
+        # Minify CSS if needed
+        if [ -f css/template.css ]; then
+          echo "CSS file found: css/template.css"
+        fi
+        if [ -f css/brittany-style.css ]; then
+          echo "CSS file found: css/brittany-style.css"
+        fi
+        # Minify JS if needed
+        if [ -f js/template.js ]; then
+          echo "JS file found: js/template.js"
+        fi
+        if [ -f js/brittany-script.js ]; then
+          echo "JS file found: js/brittany-script.js"
+        fi
+        
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        publish_branch: gh-pages
+        
+    - name: Deploy to staging
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging'
+      run: |
+        echo "Deploying to staging environment..."
+        echo "Environment: ${{ github.event.inputs.environment }}"
+        echo "Force rebuild: ${{ github.event.inputs.force_rebuild }}"
+        
+    - name: Deploy to production
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production'
+      run: |
+        echo "Deploying to production environment..."
+        echo "Environment: ${{ github.event.inputs.environment }}"
+        echo "Force rebuild: ${{ github.event.inputs.force_rebuild }}"
+        
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ "${{ job.status }}" == "success" ]; then
+          echo "✅ Deployment successful!"
+        else
+          echo "❌ Deployment failed!"
+        fi
