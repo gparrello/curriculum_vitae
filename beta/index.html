@@ -7,10 +7,10 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Gerardo Parrello — Data Engineer & Cloud Architect. 9+ years building data platforms at scale.">
+<meta name="description" content="Gerardo Parrello — Data Platform Engineer">
 <meta name="author" content="Gerardo Parrello">
 <meta name="copyright" content="gparrello.com">
-<title>Gerardo Parrello · Data Engineer & Cloud Architect</title>
+<title>Gerardo Parrello · Data Platform Engineer</title>
 <link rel="shortcut icon" href="../images/ico/favicon.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#FAFBFC;
@@ -30,222 +29,74 @@
   --accent-light:#EFF6FF;
   --accent-dark:#1D4ED8;
   --border:#E5E9F0;
-  --radius:16px;
-  --radius-sm:10px;
-  --shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06);
-  --shadow-md:0 4px 12px rgba(0,0,0,.06),0 2px 4px rgba(0,0,0,.04);
-  --shadow-lg:0 12px 40px rgba(0,0,0,.08);
   --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --font-display:'Plus Jakarta Sans','Inter',sans-serif;
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{
   font-family:var(--font-sans);
-  font-size:15px;
-  line-height:1.7;
-  color:var(--text);
-  background:var(--bg);
-  min-height:100vh;
+  font-size:15px;line-height:1.7;
+  color:var(--text);background:var(--bg);min-height:100vh;
 }
-
-/* ===== LAYOUT ===== */
-.cv-wrap{
-  display:grid;
-  grid-template-columns:340px 1fr;
-  max-width:1120px;
-  margin:0 auto;
-  min-height:100vh;
-}
-
-/* ===== SIDEBAR ===== */
+.cv-wrap{display:grid;grid-template-columns:340px 1fr;max-width:1120px;margin:0 auto;min-height:100vh}
 .sidebar{
-  background:var(--surface);
-  border-right:1px solid var(--border);
-  padding:40px 30px;
-  position:sticky;
-  top:0;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  overflow-y:auto;
+  background:var(--surface);border-right:1px solid var(--border);
+  padding:40px 30px;position:sticky;top:0;height:100vh;
+  display:flex;flex-direction:column;overflow-y:auto;
 }
-
-.avatar{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid var(--accent-light);
-  margin-bottom:20px;
-  transition:transform .4s ease;
-}
+.avatar{width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-light);margin-bottom:20px;transition:transform .4s ease}
 .avatar:hover{transform:scale(1.04)}
-
-.name{
-  font-family:var(--font-display);
-  font-size:1.6rem;
-  font-weight:700;
-  line-height:1.2;
-  margin-bottom:4px;
-}
-.title{
-  font-size:.9rem;
-  color:var(--accent);
-  font-weight:600;
-  margin-bottom:20px;
-  letter-spacing:.02em;
-}
-
+.name{font-family:var(--font-display);font-size:1.6rem;font-weight:700;line-height:1.2;margin-bottom:4px}
+.title{font-size:.9rem;color:var(--accent);font-weight:600;margin-bottom:20px;letter-spacing:.02em}
 .contact-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
 .contact-list li{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-secondary)}
 .contact-list a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
 .contact-list a:hover{color:var(--accent)}
 .contact-list .icon{flex-shrink:0;width:18px;height:18px;color:var(--text-muted)}
-
 .social-links{display:flex;gap:12px;margin-bottom:28px}
-.social-links a{
-  display:flex;align-items:center;justify-content:center;
-  width:38px;height:38px;border-radius:10px;
-  background:var(--bg);color:var(--text-secondary);
-  transition:all .25s ease;text-decoration:none;
-}
-.social-links a:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
-
-.sidebar-section-title{
-  font-family:var(--font-display);
-  font-size:.7rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  color:var(--text-muted);
-  margin-bottom:12px;
-  padding-top:20px;
-  border-top:1px solid var(--border);
-}
-
+.social-links a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--bg);color:var(--text-secondary);transition:all .25s ease;text-decoration:none}
+.social-links a:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.sidebar-section-title{font-family:var(--font-display);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:12px;padding-top:20px;border-top:1px solid var(--border)}
 .lang-items{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
 .lang-item{display:flex;justify-content:space-between;align-items:center}
 .lang-name{font-size:.85rem;font-weight:500}
 .lang-level{font-size:.75rem;color:var(--text-muted);font-weight:400}
-
-/* ===== MAIN CONTENT ===== */
 .main-content{padding:40px 48px 60px}
-
-.section{
-  margin-bottom:44px;
-  opacity:0;
-  animation:fadeUp .5s ease forwards;
-}
+.section{margin-bottom:44px;opacity:0;animation:fadeUp .5s ease forwards}
 .section:nth-child(1){animation-delay:.05s}
 .section:nth-child(2){animation-delay:.1s}
 .section:nth-child(3){animation-delay:.15s}
 .section:nth-child(4){animation-delay:.2s}
 .section:nth-child(5){animation-delay:.25s}
-.section:nth-child(6){animation-delay:.3s}
-.section:nth-child(7){animation-delay:.35s}
-
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 .section{transform:translateY(12px)}
-
-.section-header{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:18px;
-}
-.section-header .icon{
-  width:24px;height:24px;color:var(--accent);
-  flex-shrink:0;
-}
-.section-title{
-  font-family:var(--font-display);
-  font-size:1.15rem;
-  font-weight:700;
-  color:var(--text);
-}
-
-.about-text{color:var(--text-secondary);line-height:1.8;font-size:.95rem}
-
-/* ===== TIMELINE ===== */
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.section-header .icon{width:24px;height:24px;color:var(--accent);flex-shrink:0}
+.section-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--text)}
+.about-text{color:var(--text-secondary);line-height:1.8;font-size:.95rem;margin-bottom:10px}
 .timeline{position:relative;padding-left:24px}
-.timeline::before{
-  content:'';position:absolute;left:0;top:6px;bottom:0;
-  width:2px;background:var(--border);
-}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:2px;background:var(--border)}
 .timeline-item{position:relative;padding-bottom:28px;padding-left:20px}
 .timeline-item:last-child{padding-bottom:0}
-.timeline-item::before{
-  content:'';position:absolute;
-  left:-29px;top:7px;
-  width:12px;height:12px;
-  border-radius:50%;
-  background:var(--accent-light);
-  border:3px solid var(--accent);
-  transition:all .3s ease;
-}
-.timeline-item:hover::before{
-  background:var(--accent);
-  box-shadow:0 0 0 4px var(--accent-light);
-}
-
-.timeline-title{
-  font-family:var(--font-display);
-  font-size:.95rem;
-  font-weight:600;
-  color:var(--text);
-  margin-bottom:2px;
-}
-.timeline-meta{
-  display:flex;flex-wrap:wrap;gap:6px 16px;
-  font-size:.78rem;
-  color:var(--text-muted);
-  margin-bottom:10px;
-}
+.timeline-item::before{content:'';position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent-light);border:3px solid var(--accent);transition:all .3s ease}
+.timeline-item:hover::before{background:var(--accent);box-shadow:0 0 0 4px var(--accent-light)}
+.timeline-title{font-family:var(--font-display);font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.timeline-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.78rem;color:var(--text-muted);margin-bottom:10px}
 .timeline-meta span{display:inline-flex;align-items:center;gap:4px}
 .timeline-meta .org{color:var(--accent);font-weight:500}
 .timeline-desc{color:var(--text-secondary);font-size:.88rem;line-height:1.7}
 .timeline-desc p{margin-bottom:8px}
 .timeline-desc p:last-child{margin-bottom:0}
-
-/* ===== SKILLS ===== */
+.timeline-desc ul{margin:6px 0;padding-left:18px}
+.timeline-desc li{font-size:.88rem;color:var(--text-secondary);margin-bottom:4px}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-group{}
-.skill-group-label{
-  font-family:var(--font-display);
-  font-size:.78rem;
-  font-weight:600;
-  color:var(--text-muted);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  margin-bottom:10px;
-}
+.skill-group-label{font-family:var(--font-display);font-size:.78rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.skill-tag{
-  display:inline-block;
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:.78rem;
-  font-weight:500;
-  background:var(--accent-light);
-  color:var(--accent-dark);
-  transition:all .2s ease;
-}
-.skill-tag:hover{
-  background:var(--accent);
-  color:#fff;
-  transform:translateY(-1px);
-}
-
-/* ===== FOOTER ===== */
-.footer{
-  margin-top:32px;
-  padding-top:20px;
-  border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.8rem;color:var(--text-muted);
-}
+.skill-tag{display:inline-block;padding:5px 12px;border-radius:20px;font-size:.78rem;font-weight:500;background:var(--accent-light);color:var(--accent-dark);transition:all .2s ease}
+.skill-tag:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+.footer{margin-top:32px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--text-muted)}
 .footer a{color:var(--text-muted);text-decoration:none}
 .footer a:hover{color:var(--accent)}
-
-/* ===== PRINT ===== */
 @media print{
   .sidebar{height:auto;position:static;border:none}
   .cv-wrap{grid-template-columns:280px 1fr}
@@ -254,16 +105,9 @@ body{
   .skill-tag{background:#f0f0f0;color:#333;border:1px solid #ddd}
   .avatar{border-color:#ddd}
 }
-
-/* ===== RESPONSIVE ===== */
 @media(max-width:860px){
   .cv-wrap{grid-template-columns:1fr}
-  .sidebar{
-    position:static;height:auto;
-    flex-direction:row;flex-wrap:wrap;align-items:flex-start;
-    padding:28px 24px;gap:16px;
-    border-right:none;border-bottom:1px solid var(--border);
-  }
+  .sidebar{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:flex-start;padding:28px 24px;gap:16px;border-right:none;border-bottom:1px solid var(--border)}
   .sidebar .avatar{width:80px;height:80px;margin-bottom:0}
   .sidebar .name{font-size:1.3rem}
   .sidebar .title{font-size:.8rem;margin-bottom:12px}
@@ -275,7 +119,6 @@ body{
   .timeline{padding-left:20px}
   .skills-grid{grid-template-columns:1fr}
 }
-
 @media(max-width:480px){
   .sidebar{padding:20px 16px;gap:12px}
   .sidebar .avatar{width:60px;height:60px}
@@ -295,7 +138,7 @@ body{
   <img src="../images/avatar.jpg" alt="Gerardo Parrello" class="avatar" loading="lazy">
   <div>
     <h1 class="name">Gerardo Parrello</h1>
-    <div class="title">Data Engineer &amp; Cloud Architect</div>
+    <div class="title">Data Platform Engineer</div>
   </div>
 
   <ul class="contact-list">
@@ -304,12 +147,8 @@ body{
       <a href="mailto:me@gparrello.com">me@gparrello.com</a>
     </li>
     <li>
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <a href="tel:34606067191">+34 606 06 71 91</a>
-    </li>
-    <li>
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Madrid, Spain
+      Barcelona
     </li>
     <li>
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -331,9 +170,9 @@ body{
 
   <div class="sidebar-section-title">Languages</div>
   <div class="lang-items">
-    <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
-    <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Full Professional</span></div>
-    <div class="lang-item"><span class="lang-name">Italian</span><span class="lang-level">Professional Working</span></div>
+    <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Native / Bilingual</span></div>
+    <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">Native / Bilingual</span></div>
+    <div class="lang-item"><span class="lang-name">Catalan</span><span class="lang-level">Professional</span></div>
   </div>
 </aside>
 
@@ -344,14 +183,11 @@ body{
   <section class="section" id="about">
     <div class="section-header">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">About Me</h2>
     </div>
-    <p class="about-text">
-      Data engineer with 9+ years of experience in data analytics, data engineering, infrastructure and cloud architecture.
-      Passionate about making large amounts of data available and accessible to all potential consumers.
-      Throughout my career I have worked for big internet companies, large corporations and small startups,
-      making me adaptable and able to deliver with high quality in any environment.
-    </p>
+    <p class="about-text">DevOps engineer focused in Data Platform infrastructure.</p>
+    <p class="about-text">Economics major and musician, passionate about data and technology.</p>
+    <p class="about-text">As an avid self-hoster, interested in open source software, privacy and decentralization.</p>
   </section>
 
   <!-- WORK EXPERIENCE -->
@@ -363,17 +199,19 @@ body{
 
     <div class="timeline">
 
-      <!-- Cabify -->
+      <!-- Glovo -->
       <div class="timeline-item">
-        <h3 class="timeline-title">Data Platform Engineer</h3>
+        <h3 class="timeline-title">Data Engineer & Data Platform Engineer</h3>
         <div class="timeline-meta">
-          <span class="org"><a href="https://cabify.com" target="_blank" style="color:var(--accent);text-decoration:none">Cabify</a></span>
-          <span>Sep 2020 — Present</span>
+          <span class="org"><a href="https://glovoapp.com" target="_blank" style="color:var(--accent);text-decoration:none">Glovo</a></span>
+          <span>Oct 2020 — Present</span>
         </div>
         <div class="timeline-desc">
-          <p>Cabify is a multi-modal transport platform operating across multiple countries in Europe and Latin America.</p>
-          <p>Transitioned from the core Data team to the newly-formed Data Platform team, introducing knowledge in modern infrastructure technologies — Kubernetes, ArgoCD, and Terraform for infrastructure as code.</p>
-          <p>Designed, implemented and oversaw all Trino infrastructure. Multiple clusters serving hundreds of thousands of queries per day, still running in production today.</p>
+          <p>Glovo is the app that allows you to get the best products of your city in a few minutes. We connect users, businesses and couriers to make that possible. The project was born with the aim of transforming the way users acquire what they need, making cities more accessible.</p>
+          <p>Originally joining the central Data Engineering team to manage all data pipelines for the company using Luigi and Jenkins as orchestration stack, and Redshift as our data warehouse. The technical decisions taken at the time were not the best fit for a company that was growing as fast as Glovo did, and soon enough the team started evaluating new technologies to replace them. Moreover, the amount of time dedicated to support stakeholders and maintain existing pipelines was too high, and I made it my personal objective to reduce this as much as possible. This lead to the creation of a first support team that would take over triaging of requests and gave our team room to grow and engage in the transition to the next stack.</p>
+          <p>In this way, and with the introduction of a data mesh architecture, the team moved on to build the platform that allowed all newly created data domains to build and manage their own data products, using Airflow for orchestration and Trino and Glue as data lake, thus becoming the Data Platform team. A side effect of the transition to a platform team was the introduction of knowledge in new technologies, in particular Kubernetes, ArgoCD and Terraform for infrastructure as code.</p>
+          <p>My main objective within this team was to design, implement and oversee all Trino infrastructure. This infra continues running until today, with several clusters serving hundreds of thousands of queries per day.</p>
+          <p><strong>Additionally</strong>, during my time at Glovo I acquired proficiency in agentic workflows — designing and implementing autonomous agents and AI-driven orchestration systems that streamline operational processes and data platform interactions.</p>
         </div>
       </div>
 
@@ -385,8 +223,8 @@ body{
           <span>May 2019 — Aug 2020</span>
         </div>
         <div class="timeline-desc">
-          <p>Letgo provides a marketplace that allows users to buy from, sell to and chat with others locally. By 2017 it was the second fastest growing app in the U.S.</p>
-          <p>Provided stakeholders inside and outside the company with relevant data in a timely manner by managing over a hundred Airflow pipelines — pulling from tens of databases, external sources, and hundreds of domain events — to deliver data to the internal custom BI tool and to several data sinks.</p>
+          <p>Letgo provides a marketplace that allows users to buy from, sell to and chat with others locally. The products launched in 2015. By September 2015, its app had two million downloads and half a million product listings. In 2017 it was the second fastest growing app in the U.S.</p>
+          <p>My main objective consisted on providing stakeholders inside and outside the company with relevant data in a timely manner, managing over a hundred pipelines in Airflow that deliver all the data necessary —pulling from tens of databases and external sources, and hundreds of domain events— to our internal custom BI tool and to several data sinks for internal consumption.</p>
         </div>
       </div>
 
@@ -398,7 +236,26 @@ body{
           <span>Sep 2018 — May 2019</span>
         </div>
         <div class="timeline-desc">
-          <p>Designed and implemented data pipelines and analytics solutions for enterprise clients across multiple sectors.</p>
+          <p>Accenture is a multinational company providing consulting and professional services.</p>
+          <p>I worked for the Applied Intelligence practice at their Advanced Analytics branch in the Corporate Functions area. My clients included a major private sports club and a big European airport.</p>
+        </div>
+      </div>
+
+      <!-- PayXpert -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Data Engineer</h3>
+        <div class="timeline-meta">
+          <span class="org">As freelancer for <a href="https://payxpert.com" target="_blank" style="color:var(--accent);text-decoration:none">PayXpert</a></span>
+          <span>Nov 2017 — Nov 2018</span>
+        </div>
+        <div class="timeline-desc">
+          <p>PayXpert is a fintech company currently expanding its team in Barcelona, with offices in several countries. It provides its customers with electronic payment solutions.</p>
+          <p>Worked-on projects include:</p>
+          <ul>
+            <li>Design of custom ETL pipeline to perform automated bank reconciliations.</li>
+            <li>Implementation of a company wide open source Human Resources Management solution.</li>
+            <li>Implementation of automatic data retrieval from FTP remote sources using VPN and SSH keys.</li>
+          </ul>
         </div>
       </div>
 
@@ -410,31 +267,77 @@ body{
           <span>Jan 2018 — Sep 2018</span>
         </div>
         <div class="timeline-desc">
-          <p>Developed BI solutions and dashboards for one of Europe's leading telecommunications carriers.</p>
+          <p>New Voice is a leading telecommunications carrier in Europe, with a presence in the UK, Germany, Czech Republic and Slovakia, all under the O2 brand.</p>
+          <p>I worked for the Business Intelligence department, focused primarily on providing reports for external clients and management.</p>
         </div>
       </div>
 
-      <!-- Analytics Consultant -->
+      <!-- Diferentes Consultoras -->
       <div class="timeline-item">
-        <h3 class="timeline-title">Analytics Consultant &amp; BI Developer</h3>
+        <h3 class="timeline-title">Analytics Consultant and BI Developer</h3>
         <div class="timeline-meta">
-          <span class="org">Various Consulting Firms</span>
+          <span class="org">Diferentes Consultoras</span>
           <span>Jun 2017 — Jan 2018</span>
         </div>
         <div class="timeline-desc">
-          <p>Delivered analytics and BI consulting projects across multiple industries, building data pipelines and dashboards for diverse business needs.</p>
+          <p>Diferentes Consultoras provides analytics, BI and Big Data consulting services to the main companies in Spain.</p>
+          <p>I took part in several projects within the energy and finance sectors.</p>
+          <p>Engaged in field work focused on audit reports for the following clients, among others: Artificial Solutions, DSV: Global Transport and Logistics, Omnicom Media Group, Ricoh, Tourline Express, TRAM, Wallenius Wilhelmsen Logistics.</p>
         </div>
       </div>
 
-      <!-- Bootic -->
+      <!-- Digamelon & La Famiglia -->
       <div class="timeline-item">
-        <h3 class="timeline-title">Co-founder</h3>
+        <h3 class="timeline-title">Finance Manager & Data Engineer</h3>
         <div class="timeline-meta">
-          <span class="org">Bootic</span>
-          <span>2014 — 2016</span>
+          <span class="org">As freelancer for <a href="http://digamelon.net" target="_blank" style="color:var(--accent);text-decoration:none">Digamelon</a> and <a href="http://lafamiglia.es" target="_blank" style="color:var(--accent);text-decoration:none">La Famiglia</a></span>
+          <span>Nov 2016 — Oct 2018</span>
         </div>
         <div class="timeline-desc">
-          <p>Co-founded a startup, gaining hands-on experience across the full product lifecycle — from idea to execution in a resource-constrained environment.</p>
+          <p>During my time as a freelancer for this clients, I worked on the following projects:</p>
+          <ul>
+            <li>Developed an ETL pipeline from <a href="http://zendesk.com" target="_blank">Zendesk</a> to a MySQL instance in AWS RDS</li>
+            <li>Deployed <a href="https://grafana.com" target="_blank">Grafana</a> to an AWS EC2 instance to plot data in real-time dashboards</li>
+            <li>Implemented <a href="#">Odoo 8</a> (formerly OpenERP)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kott Müller -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Founder</h3>
+        <div class="timeline-meta">
+          <span class="org">Kott Müller</span>
+          <span>Nov 2015 — Oct 2016</span>
+        </div>
+        <div class="timeline-desc">
+          <p>My partners and I created a shoes brand that produced locally. We managed everthing: from building the site from the ground up to logistics, finance and marketing.</p>
+        </div>
+      </div>
+
+      <!-- Northweek -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Finance Manager</h3>
+        <div class="timeline-meta">
+          <span class="org">Northweek</span>
+          <span>Oct 2014 — Oct 2015</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Northweek is a leading fashion sunglasses brand in Southern Europe.</p>
+          <p>I was responsible for the finance and management control department, reporting directly to the company's board. I managed the company's treasury, invoicing and taxes, and coordinated with the external accounting team.</p>
+        </div>
+      </div>
+
+      <!-- KPMG -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Accounting Audit Intern</h3>
+        <div class="timeline-meta">
+          <span class="org">KPMG</span>
+          <span>Jan 2013 — Dec 2013</span>
+        </div>
+        <div class="timeline-desc">
+          <p>KPMG is a multinational professional services network, one of the Big Four accounting organizations.</p>
+          <p>I worked for the Financial Auditing department, performing auditing tasks for companies in the financial and industrial sectors.</p>
         </div>
       </div>
 
@@ -451,48 +354,24 @@ body{
     <div class="timeline">
 
       <div class="timeline-item">
-        <h3 class="timeline-title">Master's Degree in Data Science / Big Data</h3>
+        <h3 class="timeline-title">Data Analytics with Machine Learning</h3>
         <div class="timeline-meta">
-          <span class="org">Universidad Politécnica de Madrid</span>
-          <span>2019 — 2020</span>
+          <span class="org">Ubiqum Code Academy</span>
+          <span>Nov 2018 — Apr 2019</span>
         </div>
         <div class="timeline-desc">
-          <p>Technologies: MongoDB, Neo4J, Spark, Python, Hadoop, Flume, Kafka, Hive, Impala, Zeppelin</p>
+          <p>Ubiqum is a respected coding academy. It specializes in offering an innovative learning system based on real projects.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <h3 class="timeline-title">Master's Degree in Computer Science Engineering</h3>
-        <div class="timeline-meta">
-          <span class="org">Universidad Autónoma de Madrid</span>
-          <span>2017 — 2019</span>
-        </div>
-        <div class="timeline-desc">
-          <p>Specialization in Data Engineering</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <h3 class="timeline-title">Dual Bachelor's Degree: Mathematics &amp; Computer Science Engineering</h3>
-        <div class="timeline-meta">
-          <span class="org">Universidad Autónoma de Madrid</span>
-          <span>2011 — 2017</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <h3 class="timeline-title">Exchange Program</h3>
-        <div class="timeline-meta">
-          <span class="org">Simon Fraser University — Vancouver, Canada</span>
-          <span>2014 — 2015</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <h3 class="timeline-title">Higher Education in Social Sciences</h3>
+        <h3 class="timeline-title">Bachelor in Economics</h3>
         <div class="timeline-meta">
           <span class="org">Universidad Rey Juan Carlos</span>
-          <span>2010 — 2012</span>
+          <span>Sep 2008 — Jun 2012</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Bachelor's degree in Economics. Specialization in financial markets.</p>
         </div>
       </div>
 
@@ -509,7 +388,19 @@ body{
     <div class="skills-grid">
 
       <div class="skill-group">
-        <div class="skill-group-label">Cloud &amp; DevOps</div>
+        <div class="skill-group-label">Data Engineering &amp; Orchestration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Trino</span>
+          <span class="skill-tag">Airflow</span>
+          <span class="skill-tag">Spark</span>
+          <span class="skill-tag">Kafka</span>
+          <span class="skill-tag">Luigi</span>
+          <span class="skill-tag">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Cloud &amp; Infrastructure</div>
         <div class="skill-tags">
           <span class="skill-tag">AWS</span>
           <span class="skill-tag">GCP</span>
@@ -517,21 +408,6 @@ body{
           <span class="skill-tag">Docker</span>
           <span class="skill-tag">Terraform</span>
           <span class="skill-tag">ArgoCD</span>
-          <span class="skill-tag">GitLab CI</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Data Engineering</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Trino</span>
-          <span class="skill-tag">Airflow</span>
-          <span class="skill-tag">Spark</span>
-          <span class="skill-tag">Kafka</span>
-          <span class="skill-tag">Snowflake</span>
-          <span class="skill-tag">dbt</span>
-          <span class="skill-tag">Tableau</span>
-          <span class="skill-tag">ClickHouse</span>
         </div>
       </div>
 
@@ -542,6 +418,7 @@ body{
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Scala</span>
           <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Redshift</span>
           <span class="skill-tag">PostgreSQL</span>
           <span class="skill-tag">MySQL</span>
           <span class="skill-tag">Cassandra</span>
@@ -550,40 +427,6 @@ body{
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- LANGUAGES (mobile fallback) -->
-  <section class="section" id="languages">
-    <div class="section-header">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <h2 class="section-title">Languages</h2>
-    </div>
-    <div class="skills-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div><strong style="font-size:.95rem">Spanish</strong><br><span style="color:var(--text-muted);font-size:.85rem">Native</span></div>
-      <div><strong style="font-size:.95rem">English</strong><br><span style="color:var(--text-muted);font-size:.85rem">Full Professional Proficiency</span></div>
-      <div><strong style="font-size:.95rem">Italian</strong><br><span style="color:var(--text-muted);font-size:.85rem">Professional Working Proficiency</span></div>
-    </div>
-  </section>
-
-  <!-- AWARDS -->
-  <section class="section" id="awards">
-    <div class="section-header">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-      <h2 class="section-title">Awards</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3 class="timeline-title">IBM Recognizes Talent Contest — Winner</h3>
-        <div class="timeline-meta">
-          <span class="org">IBM</span>
-          <span>2016</span>
-        </div>
-        <div class="timeline-desc">
-          <p>Selected as one of the winners of the IBM Recognizes Talent contest after presenting my Master's Thesis.</p>
-        </div>
-      </div>
     </div>
   </section>
 
