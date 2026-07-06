@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GN2B2RN0E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-3GN2B2RN0E')</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Gerardo Parrello — Data Engineer & Cloud Architect. 9+ years building data platforms at scale.">
+<meta name="author" content="Gerardo Parrello">
+<meta name="copyright" content="gparrello.com">
+<title>Gerardo Parrello · Data Engineer & Cloud Architect</title>
+<link rel="shortcut icon" href="../images/ico/favicon.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFBFC;
+  --surface:#fff;
+  --text:#1A1D23;
+  --text-secondary:#5C6570;
+  --text-muted:#8B95A5;
+  --accent:#3B82F6;
+  --accent-light:#EFF6FF;
+  --accent-dark:#1D4ED8;
+  --border:#E5E9F0;
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow:0 1px 3px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:0 4px 12px rgba(0,0,0,.06),0 2px 4px rgba(0,0,0,.04);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.08);
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Plus Jakarta Sans','Inter',sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{
+  font-family:var(--font-sans);
+  font-size:15px;
+  line-height:1.7;
+  color:var(--text);
+  background:var(--bg);
+  min-height:100vh;
+}
+
+/* ===== LAYOUT ===== */
+.cv-wrap{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  max-width:1120px;
+  margin:0 auto;
+  min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  background:var(--surface);
+  border-right:1px solid var(--border);
+  padding:40px 30px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
+}
+
+.avatar{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--accent-light);
+  margin-bottom:20px;
+  transition:transform .4s ease;
+}
+.avatar:hover{transform:scale(1.04)}
+
+.name{
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:4px;
+}
+.title{
+  font-size:.9rem;
+  color:var(--accent);
+  font-weight:600;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.contact-list li{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-secondary)}
+.contact-list a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.contact-list a:hover{color:var(--accent)}
+.contact-list .icon{flex-shrink:0;width:18px;height:18px;color:var(--text-muted)}
+
+.social-links{display:flex;gap:12px;margin-bottom:28px}
+.social-links a{
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:10px;
+  background:var(--bg);color:var(--text-secondary);
+  transition:all .25s ease;text-decoration:none;
+}
+.social-links a:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+
+.sidebar-section-title{
+  font-family:var(--font-display);
+  font-size:.7rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--text-muted);
+  margin-bottom:12px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+
+.lang-items{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.lang-item{display:flex;justify-content:space-between;align-items:center}
+.lang-name{font-size:.85rem;font-weight:500}
+.lang-level{font-size:.75rem;color:var(--text-muted);font-weight:400}
+
+/* ===== MAIN CONTENT ===== */
+.main-content{padding:40px 48px 60px}
+
+.section{
+  margin-bottom:44px;
+  opacity:0;
+  animation:fadeUp .5s ease forwards;
+}
+.section:nth-child(1){animation-delay:.05s}
+.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.15s}
+.section:nth-child(4){animation-delay:.2s}
+.section:nth-child(5){animation-delay:.25s}
+.section:nth-child(6){animation-delay:.3s}
+.section:nth-child(7){animation-delay:.35s}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.section{transform:translateY(12px)}
+
+.section-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:18px;
+}
+.section-header .icon{
+  width:24px;height:24px;color:var(--accent);
+  flex-shrink:0;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+}
+
+.about-text{color:var(--text-secondary);line-height:1.8;font-size:.95rem}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{
+  content:'';position:absolute;left:0;top:6px;bottom:0;
+  width:2px;background:var(--border);
+}
+.timeline-item{position:relative;padding-bottom:28px;padding-left:20px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{
+  content:'';position:absolute;
+  left:-29px;top:7px;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:var(--accent-light);
+  border:3px solid var(--accent);
+  transition:all .3s ease;
+}
+.timeline-item:hover::before{
+  background:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-light);
+}
+
+.timeline-title{
+  font-family:var(--font-display);
+  font-size:.95rem;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:2px;
+}
+.timeline-meta{
+  display:flex;flex-wrap:wrap;gap:6px 16px;
+  font-size:.78rem;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+.timeline-meta span{display:inline-flex;align-items:center;gap:4px}
+.timeline-meta .org{color:var(--accent);font-weight:500}
+.timeline-desc{color:var(--text-secondary);font-size:.88rem;line-height:1.7}
+.timeline-desc p{margin-bottom:8px}
+.timeline-desc p:last-child{margin-bottom:0}
+
+/* ===== SKILLS ===== */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.skill-group{}
+.skill-group-label{
+  font-family:var(--font-display);
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:10px;
+}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{
+  display:inline-block;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:.78rem;
+  font-weight:500;
+  background:var(--accent-light);
+  color:var(--accent-dark);
+  transition:all .2s ease;
+}
+.skill-tag:hover{
+  background:var(--accent);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  margin-top:32px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.8rem;color:var(--text-muted);
+}
+.footer a{color:var(--text-muted);text-decoration:none}
+.footer a:hover{color:var(--accent)}
+
+/* ===== PRINT ===== */
+@media print{
+  .sidebar{height:auto;position:static;border:none}
+  .cv-wrap{grid-template-columns:280px 1fr}
+  .section{opacity:1;transform:none;animation:none}
+  .social-links a{background:none;border:1px solid #ddd}
+  .skill-tag{background:#f0f0f0;color:#333;border:1px solid #ddd}
+  .avatar{border-color:#ddd}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:860px){
+  .cv-wrap{grid-template-columns:1fr}
+  .sidebar{
+    position:static;height:auto;
+    flex-direction:row;flex-wrap:wrap;align-items:flex-start;
+    padding:28px 24px;gap:16px;
+    border-right:none;border-bottom:1px solid var(--border);
+  }
+  .sidebar .avatar{width:80px;height:80px;margin-bottom:0}
+  .sidebar .name{font-size:1.3rem}
+  .sidebar .title{font-size:.8rem;margin-bottom:12px}
+  .sidebar .contact-list{flex-direction:row;flex-wrap:wrap;gap:6px 14px;margin-bottom:12px}
+  .sidebar .contact-list li{font-size:.78rem}
+  .sidebar .sidebar-section-title{display:none}
+  .sidebar .lang-items{display:none}
+  .main-content{padding:28px 24px 40px}
+  .timeline{padding-left:20px}
+  .skills-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:480px){
+  .sidebar{padding:20px 16px;gap:12px}
+  .sidebar .avatar{width:60px;height:60px}
+  .sidebar .name{font-size:1.1rem}
+  .sidebar .contact-list{gap:4px 10px}
+  .main-content{padding:20px 16px 32px}
+  .section{margin-bottom:32px}
+}
+</style>
+</head>
+<body>
+
+<div class="cv-wrap">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <img src="../images/avatar.jpg" alt="Gerardo Parrello" class="avatar" loading="lazy">
+  <div>
+    <h1 class="name">Gerardo Parrello</h1>
+    <div class="title">Data Engineer &amp; Cloud Architect</div>
+  </div>
+
+  <ul class="contact-list">
+    <li>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+      <a href="mailto:me@gparrello.com">me@gparrello.com</a>
+    </li>
+    <li>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:34606067191">+34 606 06 71 91</a>
+    </li>
+    <li>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Madrid, Spain
+    </li>
+    <li>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <a href="https://gparrello.com" target="_blank">gparrello.com</a>
+    </li>
+  </ul>
+
+  <div class="social-links">
+    <a href="https://github.com/gparrello" target="_blank" aria-label="GitHub">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/gparrello" target="_blank" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://twitter.com/gparrello" target="_blank" aria-label="Twitter / X">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </div>
+
+  <div class="sidebar-section-title">Languages</div>
+  <div class="lang-items">
+    <div class="lang-item"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
+    <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Full Professional</span></div>
+    <div class="lang-item"><span class="lang-name">Italian</span><span class="lang-level">Professional Working</span></div>
+  </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main-content">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <h2 class="section-title">About</h2>
+    </div>
+    <p class="about-text">
+      Data engineer with 9+ years of experience in data analytics, data engineering, infrastructure and cloud architecture.
+      Passionate about making large amounts of data available and accessible to all potential consumers.
+      Throughout my career I have worked for big internet companies, large corporations and small startups,
+      making me adaptable and able to deliver with high quality in any environment.
+    </p>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="section" id="work">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Cabify -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Data Platform Engineer</h3>
+        <div class="timeline-meta">
+          <span class="org"><a href="https://cabify.com" target="_blank" style="color:var(--accent);text-decoration:none">Cabify</a></span>
+          <span>Sep 2020 — Present</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Cabify is a multi-modal transport platform operating across multiple countries in Europe and Latin America.</p>
+          <p>Transitioned from the core Data team to the newly-formed Data Platform team, introducing knowledge in modern infrastructure technologies — Kubernetes, ArgoCD, and Terraform for infrastructure as code.</p>
+          <p>Designed, implemented and oversaw all Trino infrastructure. Multiple clusters serving hundreds of thousands of queries per day, still running in production today.</p>
+        </div>
+      </div>
+
+      <!-- Letgo -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">BI Data Engineer</h3>
+        <div class="timeline-meta">
+          <span class="org"><a href="https://letgo.com/about-letgo" target="_blank" style="color:var(--accent);text-decoration:none">Letgo</a></span>
+          <span>May 2019 — Aug 2020</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Letgo provides a marketplace that allows users to buy from, sell to and chat with others locally. By 2017 it was the second fastest growing app in the U.S.</p>
+          <p>Provided stakeholders inside and outside the company with relevant data in a timely manner by managing over a hundred Airflow pipelines — pulling from tens of databases, external sources, and hundreds of domain events — to deliver data to the internal custom BI tool and to several data sinks.</p>
+        </div>
+      </div>
+
+      <!-- Accenture -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Data Engineer</h3>
+        <div class="timeline-meta">
+          <span class="org">Accenture</span>
+          <span>Sep 2018 — May 2019</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Designed and implemented data pipelines and analytics solutions for enterprise clients across multiple sectors.</p>
+        </div>
+      </div>
+
+      <!-- New Voice / O2 -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">BI Developer</h3>
+        <div class="timeline-meta">
+          <span class="org">New Voice / O2</span>
+          <span>Jan 2018 — Sep 2018</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Developed BI solutions and dashboards for one of Europe's leading telecommunications carriers.</p>
+        </div>
+      </div>
+
+      <!-- Analytics Consultant -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Analytics Consultant &amp; BI Developer</h3>
+        <div class="timeline-meta">
+          <span class="org">Various Consulting Firms</span>
+          <span>Jun 2017 — Jan 2018</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Delivered analytics and BI consulting projects across multiple industries, building data pipelines and dashboards for diverse business needs.</p>
+        </div>
+      </div>
+
+      <!-- Bootic -->
+      <div class="timeline-item">
+        <h3 class="timeline-title">Co-founder</h3>
+        <div class="timeline-meta">
+          <span class="org">Bootic</span>
+          <span>2014 — 2016</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Co-founded a startup, gaining hands-on experience across the full product lifecycle — from idea to execution in a resource-constrained environment.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <h2 class="section-title">Education</h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3 class="timeline-title">Master's Degree in Data Science / Big Data</h3>
+        <div class="timeline-meta">
+          <span class="org">Universidad Politécnica de Madrid</span>
+          <span>2019 — 2020</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Technologies: MongoDB, Neo4J, Spark, Python, Hadoop, Flume, Kafka, Hive, Impala, Zeppelin</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="timeline-title">Master's Degree in Computer Science Engineering</h3>
+        <div class="timeline-meta">
+          <span class="org">Universidad Autónoma de Madrid</span>
+          <span>2017 — 2019</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Specialization in Data Engineering</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="timeline-title">Dual Bachelor's Degree: Mathematics &amp; Computer Science Engineering</h3>
+        <div class="timeline-meta">
+          <span class="org">Universidad Autónoma de Madrid</span>
+          <span>2011 — 2017</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="timeline-title">Exchange Program</h3>
+        <div class="timeline-meta">
+          <span class="org">Simon Fraser University — Vancouver, Canada</span>
+          <span>2014 — 2015</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="timeline-title">Higher Education in Social Sciences</h3>
+        <div class="timeline-meta">
+          <span class="org">Universidad Rey Juan Carlos</span>
+          <span>2010 — 2012</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <h2 class="section-title">Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-label">Cloud &amp; DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Terraform</span>
+          <span class="skill-tag">ArgoCD</span>
+          <span class="skill-tag">GitLab CI</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Data Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Trino</span>
+          <span class="skill-tag">Airflow</span>
+          <span class="skill-tag">Spark</span>
+          <span class="skill-tag">Kafka</span>
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">dbt</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">ClickHouse</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="grid-column:1/-1">
+        <div class="skill-group-label">Programming &amp; Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Scala</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Cassandra</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LANGUAGES (mobile fallback) -->
+  <section class="section" id="languages">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <h2 class="section-title">Languages</h2>
+    </div>
+    <div class="skills-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div><strong style="font-size:.95rem">Spanish</strong><br><span style="color:var(--text-muted);font-size:.85rem">Native</span></div>
+      <div><strong style="font-size:.95rem">English</strong><br><span style="color:var(--text-muted);font-size:.85rem">Full Professional Proficiency</span></div>
+      <div><strong style="font-size:.95rem">Italian</strong><br><span style="color:var(--text-muted);font-size:.85rem">Professional Working Proficiency</span></div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="section" id="awards">
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      <h2 class="section-title">Awards</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3 class="timeline-title">IBM Recognizes Talent Contest — Winner</h3>
+        <div class="timeline-meta">
+          <span class="org">IBM</span>
+          <span>2016</span>
+        </div>
+        <div class="timeline-desc">
+          <p>Selected as one of the winners of the IBM Recognizes Talent contest after presenting my Master's Thesis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>&copy; 2026 <a href="https://gparrello.com">gparrello.com</a></span>
+    <span>
+      <a href="#work">Experience</a> ·
+      <a href="#education">Education</a> ·
+      <a href="#skills">Skills</a>
+    </span>
+  </div>
+
+</main>
+</div>
+
+</body>
+</html>
