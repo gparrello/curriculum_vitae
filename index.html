@@ -89,8 +89,7 @@ body{
 .timeline-desc p:last-child{margin-bottom:0}
 .timeline-desc ul{margin:6px 0;padding-left:18px}
 .timeline-desc li{font-size:.88rem;color:var(--text-secondary);margin-bottom:4px}
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.skill-group-label{font-family:var(--font-display);font-size:.78rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.skills-grid{display:flex;flex-wrap:wrap;gap:6px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
 .skill-tag{display:inline-block;padding:5px 12px;border-radius:20px;font-size:.78rem;font-weight:500;background:var(--accent-light);color:var(--accent-dark);transition:all .2s ease}
 .skill-tag:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
@@ -204,9 +203,9 @@ body{
           <span>Oct 2020 - Present</span>
         </div>
         <div class="timeline-desc">
-          <p>Glovo connects users, businesses and couriers to make it possible to get the best products of your city in a few minutes. I joined the central Data Engineering team which later evolved into a Data Platform team, enabling the growth of data-driven operations across the company.</p>
-          <p>My focus shifted from managing data pipelines to designing and building the platform infrastructure that allowed multiple teams to own their data products. This included working with modern cloud-native technologies and architecting scalable systems that handle hundreds of thousands of queries per day.</p>
-          <p>During this time I also developed strong expertise in agentic workflows and AI-driven orchestration — designing autonomous systems that interact with the data platform, automating operational decisions and streamlining how teams interact with data infrastructure.</p>
+          <p>Glovo connects users, businesses and couriers to make it possible to get the best products of your city in a few minutes.</p>
+          <p>I joined the central Data Engineering team which later evolved into the Data Platform team, enabling the growth of data-driven operations across the company. My focus shifted from managing data pipelines to designing and building the platform infrastructure that allowed multiple teams to own their data products. These are now autoscalable systems that handle millions of requests per day.</p>
+          <p>Recently I've also developed a strong interest in agentic workflows and AI-driven orchestration. My main mission now is to design the infrastructure underpinning an emerging conversational analytics system that will interact with the data platform to respond to any analytical question.</p>
         </div>
       </div>
 
@@ -344,36 +343,26 @@ body{
     </div>
 
     <div class="skills-grid">
-
-      <div class="skill-group">
-        <div class="skill-group-label">Data Engineering &amp; Orchestration</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Trino</span>
-          <span class="skill-tag">BigQuery</span>
-          <span class="skill-tag">Airflow</span>
-        </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Trino</span>
+        <span class="skill-tag">BigQuery</span>
+        <span class="skill-tag">Airflow</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">GCP</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">ArgoCD</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">ClickHouse</span>
+        <span class="skill-tag">CubeJS</span>
+        <span class="skill-tag">Helm</span>
+        <span class="skill-tag">Grafana</span>
+        <span class="skill-tag">LLM</span>
+        <span class="skill-tag">Opencode</span>
+        <span class="skill-tag">OmniRoute</span>
       </div>
-
-      <div class="skill-group">
-        <div class="skill-group-label">Cloud &amp; Infrastructure</div>
-        <div class="skill-tags">
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">GCP</span>
-          <span class="skill-tag">Kubernetes</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">ArgoCD</span>
-        </div>
-      </div>
-
-      <div class="skill-group" style="grid-column:1/-1">
-        <div class="skill-group-label">Programming</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
