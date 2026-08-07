@@ -96,12 +96,36 @@ body{
 .footer{margin-top:32px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--text-muted)}
 .footer a{color:var(--text-muted);text-decoration:none}
 .footer a:hover{color:var(--accent)}
+/* ── Animations ── */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+/* 1. Fade-in on load — sidebar & header */
+.sidebar{animation:slideInLeft .5s ease both}
+.section-header{animation:fadeIn .5s ease both}
+
+/* 2. Scroll-triggered — sections start hidden, JS adds .visible */
+.section{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+
+/* 3. Timeline items slide in (staggered via JS) */
+.timeline-item{opacity:0;transform:translateX(-16px);transition:opacity .45s ease,transform .45s ease}
+.timeline-item.visible{opacity:1;transform:translateX(0)}
+
+/* 4. Skill tags pop in (staggered via JS) */
+.skill-tag{opacity:0;transform:scale(.85);transition:opacity .3s ease,transform .3s ease,background .2s ease,color .2s ease}
+.skill-tag.visible{opacity:1;transform:scale(1)}
+.skill-tag.visible:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+
 @media print{
-  .sidebar{height:auto;position:static;border:none}
+  .sidebar{height:auto;position:static;border:none;animation:none}
   .cv-wrap{grid-template-columns:280px 1fr}
-  .section{opacity:1;transform:none;animation:none}
+  .section{opacity:1;transform:none;animation:none;transition:none}
+  .timeline-item{opacity:1;transform:none;transition:none}
+  .skill-tag{opacity:1;transform:none;transition:none;background:#f0f0f0;color:#333;border:1px solid #ddd}
   .social-links a{background:none;border:1px solid #ddd}
-  .skill-tag{background:#f0f0f0;color:#333;border:1px solid #ddd}
   .avatar{border-color:#ddd}
 }
 @media(max-width:860px){
@@ -395,5 +419,31 @@ body{
 </main>
 </div>
 
+<script>
+// Intersection Observer — reveals sections, timeline items, and skill tags
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+// Sections
+document.querySelectorAll('.section').forEach(el => observer.observe(el));
+
+// Timeline items — staggered
+document.querySelectorAll('.timeline-item').forEach((el, i) => {
+  el.style.transitionDelay = (i * 80) + 'ms';
+  observer.observe(el);
+});
+
+// Skill tags — staggered pop-in
+document.querySelectorAll('.skill-tag').forEach((el, i) => {
+  el.style.transitionDelay = (i * 40) + 'ms';
+  observer.observe(el);
+});
+</script>
 </body>
 </html>
