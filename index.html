@@ -389,6 +389,7 @@ body{
         <span class="skill-tag">OpenMetadata</span>
         <span class="skill-tag">Opencode</span>
         <span class="skill-tag">OpenTelemetry</span>
+        <span class="skill-tag">OPNsense</span>
         <span class="skill-tag">Proxmox</span>
         <span class="skill-tag">Python</span>
         <span class="skill-tag">SQL</span>
@@ -416,29 +417,38 @@ body{
 </div>
 
 <script>
-// Intersection Observer — reveals sections, timeline items, and skill tags
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+window.addEventListener('load', () => {
+  // Stagger initial visible sections so top ones animate even if already in viewport
+  let sectionDelay = 100;
+  document.querySelectorAll('.section').forEach((el, i) => {
+    el.style.transitionDelay = (sectionDelay + i * 120) + 'ms';
   });
-}, { threshold: 0.12 });
 
-// Sections
-document.querySelectorAll('.section').forEach(el => observer.observe(el));
+  // Timeline items — staggered
+  document.querySelectorAll('.timeline-item').forEach((el, i) => {
+    el.style.transitionDelay = (i * 80) + 'ms';
+  });
 
-// Timeline items — staggered
-document.querySelectorAll('.timeline-item').forEach((el, i) => {
-  el.style.transitionDelay = (i * 80) + 'ms';
-  observer.observe(el);
-});
+  // Skill tags — staggered pop-in
+  document.querySelectorAll('.skill-tag').forEach((el, i) => {
+    el.style.transitionDelay = (i * 40) + 'ms';
+  });
 
-// Skill tags — staggered pop-in
-document.querySelectorAll('.skill-tag').forEach((el, i) => {
-  el.style.transitionDelay = (i * 40) + 'ms';
-  observer.observe(el);
+  // Delay observer start so top-of-page elements still animate
+  setTimeout(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.section').forEach(el => observer.observe(el));
+    document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+    document.querySelectorAll('.skill-tag').forEach(el => observer.observe(el));
+  }, 300);
 });
 </script>
 </body>
